@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>3D展览区</title>
+		<style>
+			html {
+				overflow: hidden
+			}
+
+			a {
+				color: aliceblue;
+				text-decoration: none;
+			}
+
+			a:hover {
+				color: aqua;
+			}
+
+			.c {
+				position: absolute;
+				top: 30px;
+				right: 30px;
+				color: white;
+				background-color: rgba(0, 0, 0, 0.5);
+				padding: 5px;
+				border-radius: 5px;
+
+			}
+
+			.but {
+				position: absolute;
+				bottom: 30px;
+				right: 30px;
+			}
+			.c p{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="c">
+			
+		</div>
+		<div class="but">
+			<a href="../index.html">返回首页</a>
+			<a href="3D.html">返回3D区</a>
+		</div>
+		<script src="../js/three.min.js"></script>
+		<script src="../js/FBXLoader.js"></script>
+		<script src="../js/OrbitControls.js"></script>
+		<script src="../js/fflate.min.js"></script>
+		<script>
+			let scene, camera, renderer;
+
+			const init = () => {
+				// 场景
+				scene = new THREE.Scene();
+				scene.background = new THREE.Color(0xaaaaaa);
+
+				// 渲染
+				renderer = new THREE.WebGLRenderer({
+					antialias: true
+				});
+				renderer.setSize(window.innerWidth, window.innerHeight); //创建场景
+				document.body.appendChild(renderer.domElement);
+
+				// 相机
+				camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 10, 50000);
+				camera.position.set(0, 0, 1000); // 将相机移到场景中心
+				camera.lookAt(scene.position); // 让相机看向场景中心
+
+				// 控制
+				const controls = new THREE.OrbitControls(camera, renderer.domElement);
+				controls.enableDamping = true;
+
+				// 光
+				const ambientLight = new THREE.AmbientLight(0xFFFFFF, 4);
+				scene.add(ambientLight);
+
+				const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+				directionalLight.position.set(0, 1, 0);
+				scene.add(directionalLight);
+
+				// 加载
+				const loader = new THREE.FBXLoader();
+				loader.load("../mox/sy/file.fbx", (object) => {
+					// 将模型移到场景中心
+					const box = new THREE.Box3().setFromObject(object);
+					const center = box.getCenter(new THREE.Vector3());
+					object.position.sub(center);
+					scene.add(object);
+				});
+
+				animate();
+			};
+
+			const animate = () => {
+				renderer.render(scene, camera);
+				requestAnimationFrame(animate);
+			};
+
+
+
+			init();
+		</script>
+
+	</body>
+</html>

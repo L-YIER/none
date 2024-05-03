@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>中国 | 青铜器</title>
+		<meta name="author" content="祖磊">
+		<meta name="description" content="青铜器,中国十大青铜器">
+		<meta name="keywords"
+			content="中国青铜器,中国十大青铜器,司母戊鼎(后母戊鼎),四羊方尊,青铜大立人像,毛公鼎,莲鹤方壶,越王勾践剑,曾侯乙编钟,秦始皇陵铜车马,长信宫灯,铜奔马(马踏飞燕)">
+		<link rel="stylesheet" href="css/bootstrap-icons.css">
+		<link rel="stylesheet" href="css/fontawesome.min.css">
+		<link rel="stylesheet" href="css/odometer.min.css">
+		<link rel="stylesheet" href="css/fancybox.min.css">
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link type="text/css" rel="stylesheet" href="css/plugins.css">
+		<link type="text/css" rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<!-- 页面加载动画 -->
+		<div class='ksan' id='ksan'><svg viewbox='0 0 1920 1080' preserveaspectratio='none' version='1.1'>
+				<path d='M0,0 C305.333333,0 625.333333,0 960,0 C1294.66667,
+							0 1614.66667,0 1920,0 L1920,1080 C1614.66667,
+							1080 1294.66667,1080 960,1080 C625.333333A,1080 305.333333,1080 0,1080 L0,0 Z' fill='#c5c5c5'>
+				</path>
+			</svg>
+			<div class='inner'><canvas class='jind' id='jind' width='200' height='200'></canvas>
+				<figure><img src='images/logo1.png' alt='Image'></figure><small>Loading</small>
+			</div>
+		</div>
+		<!-- 页面切换 -->
+		<div class='yemianqh'><svg viewbox='0 0 1920 1080' preserveaspectratio='none' version='1.1'>
+				<path d='M0,0 C305.333333,0 625.333333,0 960,0 C1294.66667,0 1614.66667,
+							0 1920,0 L1920,1080 C1614.66667,980 1294.66667,930 960,930 C625.333333,930 305.333333,980 0,1080 L0,0 Z'
+					fill='#c5c5c5'>
+				</path>
+			</svg></div>
+		<div class='smooth-scroll'>
+			<div class='section-wrapper' data-scroll-section=''>
+				<div class='search-box'>
+					<div class='container'>
+						<div class='form'>
+							<h3>搜索 青铜器</h3><input type='search' id="keyword"  placeholder='提示:四羊方尊'>
+							<input type='submit' value='搜索'  onclick='search()'>
+						</div>
+						<div class='search-events'>
+							<ul>
+
+								<li>
+									<h5><div id="searchResults"></div></small>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+				<script>
+					function search() {
+					    // 获取输入框的值
+					    var keyword = document.getElementById('keyword').value;
+					    
+					    // 静态搜索结果数据
+					    var staticResults = [
+					        "后母戊鼎",
+					        "四羊方尊",
+					        "越王勾践剑"
+					    ];
+					
+					    // 根据关键字过滤搜索结果
+					    var filteredResults = staticResults.filter(function(result) {
+					        return result.includes(keyword);
+					    });
+					
+					    // 清空搜索结果容器
+					    var searchResultsDiv = document.getElementById('searchResults');
+					    searchResultsDiv.innerHTML = '';
+					
+					    // 如果有匹配的结果，则创建列表项并添加到搜索结果容器中
+					    if (filteredResults.length > 0) {
+					        var resultList = document.createElement('ul');
+					        for (var i = 0; i < filteredResults.length; i++) {
+					            var listItem = document.createElement('li');
+					            var link = document.createElement('a');
+					            link.textContent = filteredResults[i];
+					            // 设置跳转链接，这里假设跳转到同名的 HTML 文件
+					            link.href = 'EJ/' + filteredResults[i] + '.html';
+					            listItem.appendChild(link);
+					            resultList.appendChild(listItem);
+					        }
+					        searchResultsDiv.appendChild(resultList); // 将结果列表添加到页面中
+					    } else {
+					        searchResultsDiv.textContent = "未找到匹配的结果。";
+					    }
+					}
+
+		 
+				</script>
+				<!-- 侧边栏图片 -->
+				<aside class='side-widget'><svg viewbox='0 0 600 1080' preserveaspectratio='none' version='1.1'>
+						<path d='M540,1080H0V0h540c0,179.85,0,359.7,0,539.54C540,719.7,540,899.85,540,1080z'
+							fill='#ADD8E6'></path>
+					</svg>
+					<figure class='logo'><img src='images/logo1.png' alt='Image'></figure>
+					<div class='inner'>
+						<div class='widget'>
+							<figure><img id='rd' src='' alt=''></figure>
+							<figcaption id='rp'></figcaption>
+						</div>
+					</div>
+				</aside>
+				<nav class='navbar'>
+					<div class='logo'><a href=''><img src='images/logo1.png' alt='Image'></a></div>
+					<div class='custom-menu'>
+
+					</div>
+					<div class='site-menu'>
+						<ul>
+							<li><a href='index.html'>首页</a></li>
+							<li><a href='EJ/3D.html'>3D展览区</a></li>
+							<li><a href='EJ/shouc.html'>本站收藏区</a></li>
+							<li><a href='EJ/contact.html'>联系我们</a></li>
+						</ul>
+					</div>
+					<div class='search-button'><i class='bi bi-search'></i></div>
+					<div class='lift-menu'><svg class='lift' width='30' height='30' viewbox='0 0 30 30'>
+							<path class='line line-top' d='M0,9h30'></path>
+							<path class='line line-center' d='M0,15h30'></path>
+							<path class='line line-bottom' d='M0,21h30'></path>
+						</svg></div>
+				</nav>
+				<header class="slider">
+					<div class="swiper-container slider-images">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide" data-background="images/6.png"></div>
+							<div class="swiper-slide" data-background="images/4.png"></div>
+							<div class="swiper-slide" data-background="images/3.png"></div>
+						</div>
+						<div class="container-fluid slider-nav">
+							<div class="swiper-pagination"></div>
+							<div class="swiper-fraction"></div>
+							<div class="button-prev"><i class="bi bi-chevron-left"></i></div>
+							<div class="button-next"><i class="bi bi-chevron-right"></i></div>
+						</div>
+					</div>
+					<div class="swiper-container slider-texts">
+						<!-- 页面1 -->
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="container-fluid">
+									<h1> <br>意义 </h1>
+									<p>探索中国历史上的青铜器的历史意义.</p>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="container-fluid">
+									<h1> <br>价值 </h1>
+									<p>探索中国历史上的青铜器的历史价值.</p>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="container-fluid">
+									<h1> <br>艺术 </h1>
+									<p>探索中国历史上的青铜器艺术价值.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- 播放按钮 -->
+					<div class="bf"> <a href="images/q1.mp4" data-fancybox="" data-width="640" data-height="360"
+							class="b-btn"></a>
+						<svg x="0px" y="0px" width="300px" height="300px" viewbox="0 0 300 300"
+							enable-background="new 0 0 300 300" xml:space="preserve">
+							<defs>
+								<path id="circlePath" d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 ">
+								</path>
+							</defs>
+							<circle cx="150" cy="100" r="75" fill="none"></circle>
+							<g>
+								<use xlink:href="#circlePath" fill="none"></use>
+								<text>
+									<textpath xlink:href="#circlePath">点 击 播 放 点 击 播 放 点 击 播 放 点 击 播 放</textpath>
+								</text>
+							</g>
+						</svg>
+					</div>
+				</header>
+				<section class="content-section" data-background="#fffbf7">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-12">
+								<div class="section-title text-center">
+									<figure><img src="images/logo1.png" alt="Image"></figure>
+									<h2>领先世界文明的 <br>青铜器</h2>
+								</div>
+							</div>
+							<div class="col-lg-7">
+								<figure class="image-box" data-scroll="" data-scroll-speed="-1"><img
+										src="images/越王勾践剑.png" alt="Image"></figure>
+							</div>
+							<div class="col-lg-5">
+								<div class="side-icon-list right-side">
+									<ul>
+										<li>
+											<figure><img src="images/简介.png" alt="Image"></figure>
+											<div class="content">
+												<h5>越王勾践剑</h5>
+												<p>千年不锈的越王勾践剑，被誉为“天下第一剑”<br>它曾是越王勾践至高无上的王权象征，当剑锋所指即可气吞山河</p>
+											</div>
+										</li>
+										<li>
+											<figure><img src="images/icon01.png" alt="Image"></figure>
+											<div class="content">
+												<h5>重现天下</h5>
+												<p>公元前496年-494年（春秋时期）所铸，深埋于地下2000多年之后，于上个世纪六十年代出土</p>
+											</div>
+										</li>
+										<li>
+											<figure><img src="images/故事.png" alt="Image"></figure>
+											<div class="content">
+												<h5>卧薪尝胆</h5>
+												<p>越王勾践战败后以柴草卧铺，并经常舔尝苦胆，以时时警惕自己不忘所受苦难的故事，后形容人刻苦自励，发奋图强</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="content-section">
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-lg-9">
+								<div class="section-title">
+									<figure><img src="images/logo1.png" alt="Image"></figure>
+									<h6>东方文明最有艺术价值的国之重器“青铜器”！</h6>
+									<h2>青铜美器</h2>
+								</div>
+							</div>
+							<div class="col-lg-3"><a href="#" class="circle-button">Begin to <br>appreciate</a></div>
+						</div>
+						<div class="row justify-content-center">
+							<div class="col-lg-4 col-md-6">
+								<div class="exhibition-box" data-scroll="" data-scroll-speed="-1">
+									<figure><a href="#"><img src="images/诅盟场面青铜贮贝器.jpg" alt="Image" class="img"></a>
+										<div class="info">
+											<figure class="i"><img src="images/icon-info.png" alt="Image">
+											</figure><span>诅盟场面青铜贮贝器</span>
+										</div>
+									</figure>
+									<div class="content-box">
+										<h4><a href="#">通高51厘米，盖径32厘米，底径29.7厘米</a></h4>
+										<p>汉·西汉。1955-1960年云南晋宁石寨山出土</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6">
+								<div class="exhibition-box" data-scroll="" data-scroll-speed="1">
+									<figure><a href="#"><img src="images/后母戊鼎.jpg" alt="Image" class="img"></a>
+										<div class="info">
+											<figure class="i"><img src="images/icon-info.png" alt="Image">
+											</figure><span>后母戊鼎</span>
+										</div>
+									</figure>
+									<div class="content-box">
+										<h4><a href="#">高133厘米，口长112厘米，口宽79.2厘米。</a></h4>
+										<p>商后期。1939年河南省安阳市武官村出土</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6">
+								<div class="exhibition-box" data-scroll="" data-scroll-speed="-0.5">
+									<figure><a href="#"><img src="images/四羊方尊.jpg" alt="Image" class="img"></a>
+										<div class="info">
+											<figure class="i"><img src="images/icon-info.png" alt="Image">
+											</figure><span>四羊方尊</span>
+										</div>
+									</figure>
+									<div class="content-box">
+										<h4><a href="#">上口最大径44.4厘米，高58.6厘米，重34.6千克</a></h4>
+										<p>商。1938 年湖南宁乡黄材出土</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 text-center"><a href="#" class="custom-button">查看青铜器</a></div>
+						</div>
+					</div>
+				</section>
+				<section class="content-section no-bottom-spacing bottom-white" data-background="#fffbf7">
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-12">
+								<div class="section-title text-center">
+									<figure><img src="images/logo1.png" alt="Image"></figure>
+									<h2>中国青铜器的三个时期</h2>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6">
+								<div class="text-content" data-scroll="" data-scroll-speed="-1">
+									<h6>形成期</h6>
+									<p>形成期是指龙山时代，距今4800～4000年即公元前2800-2000年之间，相当于尧舜禹传说时代。
+										古文献上纪载当时人们已开始冶铸青铜器。黄河、长江中下游地区的龙山时代遗址里，经考古发掘，
+										在几十处遗址里发现了青铜器制品。
+									</p>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6">
+								<div class="text-content" data-scroll="" data-scroll-speed="0.5">
+									<h6>鼎盛期</h6>
+									<p>鼎盛期即中国青铜器时代，时代包括夏、商、西周、春秋及战国早期，
+										延续时间约一千六百余年。这个时期的青铜器主要分为礼乐器、兵器及杂器。
+										乐器也主要用在宗庙祭祀活动中。</p>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-6">
+								<div class="text-content" data-scroll="" data-scroll-speed="1">
+									<h6>转变期</h6>
+									<p>转变时期一般指战国末年至秦汉末年这一时期。传统的礼仪制度已彻底瓦解，
+										铁制品已广泛使用。到了东汉末年，陶瓷器得到较大发展，把日用青铜器皿进一步从
+										生活中排挤出去。至于兵器，工具等方面，这时铁器早已占了主导地位。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix spacing-100"></div>
+					<div class="horizontal-scroll">
+						<div class="scroll-inner" data-scroll="" data-scroll-direction="horizontal"
+							data-scroll-speed="5">
+							<div class="scroll-wrapper">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-md-3">
+											<figure class="image-box" data-scroll="" data-scroll-speed="0"> <img
+													src="images/弦纹盉.jpg" alt="Image"> </figure>
+										</div>
+										<div class="col-md-4 offset-md-1">
+											<figure class="image-box" data-scroll="" data-scroll-speed="0"> <img
+													src="images/兽面纹方壶.png" alt="Image"> </figure>
+										</div>
+										<div class="col-md-2 offset-md-1">
+											<figure class="image-box" data-scroll="" data-scroll-speed="0"> <img
+													src="images/三羊尊.jpg" alt="Image"> </figure>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="scroll-wrapper">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-md-3">
+											<figure class="image-box" data-scroll="" data-scroll-speed="0"> <img
+													src="images/矢壶.jpg" alt="Image"> </figure>
+										</div>
+										<div class="col-md-4 offset-md-1">
+											<figure class="image-box" data-scroll="" data-scroll-speed="0"> <img
+													src="images/兽面纹簋.jpg" alt="Image"> </figure>
+										</div>
+										<div class="col-md-2 offset-md-1">
+											<figure class="image-box" data-scroll="" data-scroll-speed="0"> <img
+													src="images/史鼎.jpg" alt="Image"> </figure>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="content-section no-bottom-spacing">
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-12">
+								<div class="section-title text-center">
+									<figure><img src="images/logo1.png" alt="Image"></figure>
+									<h6>尽情享受视觉带来的冲击</h6>
+									<h2>3D展览区</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container-fluid px-0">
+						<div class="row g-0">
+							<div class="col-lg-4">
+								<div class="image-icon-box" data-scroll="" data-scroll-speed="-1">
+									<figure class="content-image"> <img src="images/z.png" alt="Image">
+									</figure>
+									<div class="content-box"> <b>01.</b>
+										<h4>青铜爵</h4>
+										<div class="expand">
+											<p>何以解忧，唯有杜康</p>
+											<a href="EJ/qingtongjue.html" class="custom-link">3D展示</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="image-icon-box" data-scroll="" data-scroll-speed="0.5">
+									<figure class="content-image"> <img src="images/sz.png" alt="Image">
+									</figure>
+									<div class="content-box"> <b>02.</b>
+										<h4>青铜三足鼎</h4>
+										<div class="expand">
+											<p>立国重器，国家和权力的象征</p>
+											<a href="EJ/sanzuding.html" class="custom-link">3D展示</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="image-icon-box" data-scroll="" data-scroll-speed="1">
+									<figure class="content-image"> <img src="images/j.png" alt="Image">
+									</figure>
+									<div class="content-box"> <b>03.</b>
+										<h4>越王勾践剑</h4>
+										<div class="expand">
+											<p>天下第一剑</p>
+											<a href="EJ/yuewangjian.html" class="custom-link">3D展示</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="content-section">
+					<div class="container">
+						<div class="row g-0 align-items-center">
+							<div class="col-lg-6">
+								<div class="art-slider">
+									<div class="titles">
+										<h6>国宝级</h6>
+										<h2>著名<br>
+											青铜器</h2>
+									</div>
+									<div class="swiper-container art-slider-content">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide"> <span>01</span>
+												<h3>商代<br>
+													四羊方尊</h3>
+											</div>
+											<div class="swiper-slide"><span>02</span>
+												<h3>西周<br>
+													毛公鼎</h3>
+											</div>
+											<div class="swiper-slide"><span>03</span>
+												<h3> 东周<br>
+													莲鹤方壶</h3>
+											</div>
+											<div class="swiper-slide"><span>04</span>
+												<h3>西周<br>
+													大盂鼎</h3>
+											</div>
+											<div class="swiper-slide"><span>05</span>
+												<h3>商代 <br>
+													司母戊鼎</h3>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="art-slider" data-scroll="" data-scroll-speed="1">
+									<div class="swiper-container art-slider-images">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide"> <img src="images/h.png" alt="Image">
+											</div>
+											<div class="swiper-slide"> <img src="images/y.png" alt="Image">
+											</div>
+											<div class="swiper-slide"> <img src="images/m.png" alt="Image">
+											</div>
+											<div class="swiper-slide"> <img src="images/hh.png" alt="Image">
+											</div>
+											<div class="swiper-slide"> <img src="images/d.png" alt="Image">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="content-section">
+					<div class="video-bg">
+						<video src="images/2.mp4" loop="" autoplay="" playsinline="" muted=""></video>
+					</div>
+					<div class="container">
+						<div class="cta-box" data-scroll="" data-scroll-speed="-1">
+							<h2>
+								中国青铜器</h2>
+							<a href="images/2.mp4" data-fancybox="" class="custom-button">点击进行播放</a>
+						</div>
+					</div>
+				</section>
+
+				<footer class="footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-4 col-md-6">
+								<h6 class="widget-title">关于我们</h6>
+								<ul class="footer-menu">
+									<li><a href="#">关于我们</a></li>
+									<li><a href="#">联系我们</a></li>
+									<li><a href="#">承诺书</a></li>
+								</ul>
+							</div>
+							<div class="col-lg-4 col-md-6">
+								<h6 class="widget-title">联系方式</h6>
+								<ul class="social-media">
+									<li><a href="tel:13150524240"><i class="bi bi-telephone"></i>手机 131xxxxxxxx</a></li>
+									<li><a href="tencent://message/?uin=1441716851&Site=Sambow&Menu=yes"><i
+												class="bi bi-tencent-qq"></i>QQ 1441716851</a></li>
+									<li><a href="mailto:1441716851@qq.com"><i class="bi bi-envelope-fill"></i>邮箱
+											1441716851@qq.com</a></li>
+								</ul>
+
+							</div>
+							<div class="col-lg-4">
+								<h6 class="widget-title">联系地址</h6>
+								<address class="address"><i class="bi bi-house-add"></i>
+									云南省玉溪市<br>
+									邮政编码 652500
+								</address>
+							</div>
+						</div>
+					</div>
+					<div class="footer-bottom">© 2024 <a href="index.html">中国青铜器</a></div>
+				</footer>
+			</div>
+		</div>
+
+		<!-- 返回顶部按钮 -->
+		<a href="index.html">
+			<button id="backtop" title="返回顶部">
+				<i class="bi bi-arrow-up-circle"></i>
+			</button></a>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/gsap.min.js"></script>
+		<script src="js/locomotive-scroll.min.js"></script>
+		<script src="js/ScrollTrigger.min.js"></script>
+		<script src="js/kinetic-slider.js"></script>
+		<script src="js/fancybox.min.js"></script>
+		<script src="js/odometer.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/scripts.js"></script>
+	</body>
+</html>
